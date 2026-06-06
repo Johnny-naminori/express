@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 const { MongoClient } = require('mongodb');
 
-// ⚠️昨日設定した「英数字のみの接続文字列」です。
-// 【あなたの英数字パスワード】の部分をご自身のパスワードに書き換えてください。
-const uri = 'mongodb+srv://setsu:DUMMY_PASSWORD@cluster0.uhcrgha.mongodb.net/?appName=Cluster0';
+
+const uri = 'mongodb+srv://setsu:mongo1173@cluster0.uhcrgha.mongodb.net/?appName=Cluster0';
 const client = new MongoClient(uri);
 
 /* GET notes listing. */
