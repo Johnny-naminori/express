@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
+
+require('dotenv').config();
+
 const { MongoClient } = require('mongodb');
 
+const uri = process.env.MONGODB_URI;
 
-const uri = 'mongodb+srv://setsu:mongo1173@cluster0.uhcrgha.mongodb.net/?appName=Cluster0';
+if (!uri) {
+  throw new Error('MONGODB_URI が .env に設定されていません');
+}
+
 const client = new MongoClient(uri);
 
 /* GET notes listing. */
